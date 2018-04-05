@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <h3>Create New Poll Question</h3>
+            <br>
+            <form class="user-form" method="POST" action="/{{user.id}}/polls">
+                <div class="form-group">
+                    <label for="userid">User Id:</label>
+                    <input class="form-control" id="userid" name="userid" type="text" value="{{user.id}}" readonly/>
+                </div>
+
+                <div class="form-group">
+                    <label for="question">Poll Question:</label>
+                    <input class="form-control" id="question" name="question" type="text" placeholder="Enter question" />
+                </div>
+
+                <div class="form-group">
+                    <label for="opta">Option A:</label>
+                    <input class="form-control" id="opta" name="opta" type="text" placeholder="Enter Option A" />
+                </div>
+
+                <div class="form-group">
+                    <label for="optb">Option B:</label>
+                    <input class="form-control" id="optb" name="optb" type="text" placeholder="Enter Option B" />
+                </div>
+
+                <div class="form-group">
+                    <label for="optc">Option C:</label>
+                    <input class="form-control" id="optc" name="optc" type="text" placeholder="Enter Option C" />
+                </div>
+
+                <div class="form-group">
+                    <label for="optd">Option D:</label>
+                    <input class="form-control" id="optd" name="optd" type="text" placeholder="Enter Option D" />
+                </div>
+
+                <input class="btn btn-default" name="Submit" type="submit" />
+            </form>
+            <br><br>
+        </div>
+    </div>
+</div>

@@ -8,11 +8,11 @@
                     <h3>Engage your audience or class in real time.</h3>
                     {{#if loggedIn}}
                     <form>
-                    <input type="button" value="My Poll" onclick="window.location.href='/{{user.id}}/polls'" />
+                    <input class="btn btn-default" type="button" value="My Poll" onclick="window.location.href='/{{user.id}}/polls'" />
                     </form>
                     {{else}}
                     <form>
-                        <input type="button" value="Sign Up" onclick="window.location.href='/register'" />
+                        <input class="btn btn-default" type="button" value="Sign Up" onclick="window.location.href='/register'" />
                     </form>
                     {{/if}}
                 </div>

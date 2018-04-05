@@ -44,7 +44,6 @@ module.exports = (dbPool) => {
             const VALUES = [user.username];
 
             dbPool.query(queryString, VALUES, (error, queryResult) => {
-                console.log('models queryResult : ' + queryResult.rows[0]);
                 bcrypt.compare(user.password, queryResult.rows[0].password, (err, res) => {
                     if (res) {
                         callback(error, queryResult);

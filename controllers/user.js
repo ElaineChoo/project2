@@ -4,29 +4,6 @@
  * ======================================
  */
 
-const get = (allModels) => {
-    return (request, response) => {
-        //use user model method 'get' to retrive user data
-        allModels.user.get(request.params.id, (error, queryResult, err, result) => {
-            //queryResult contains user data returned from the user model
-            if (error) {
-                console.log('error getting user: ', error);
-                response.sendStatus(500);
-            } else {
-                //render polls.handlebars in the user view folder
-                let content = {
-                    loggedIn: request.cookies['loggedIn'],
-                    username: request.cookies['username'],
-                    user: queryResult.rows[0],
-                    question: result.rows
-                }
-                console.log(content.user);
-                response.render('user/polls', content);
-            }
-        });
-    };
-};
-
 const updateForm = (allModels) => {
 
     return (request, response) => {
@@ -132,6 +109,29 @@ const login = (allModels) => {
 
             } else {
                 response.render('user/login');
+            }
+        });
+    };
+};
+
+const get = (allModels) => {
+    return (request, response) => {
+        //use user model method 'get' to retrive user data
+        allModels.user.get(request.params.id, (error, queryResult, err, result) => {
+            //queryResult contains user data returned from the user model
+            if (error) {
+                console.log('error getting user: ', error);
+                response.sendStatus(500);
+            } else {
+                //render polls.handlebars in the user view folder
+                let content = {
+                    loggedIn: request.cookies['loggedIn'],
+                    username: request.cookies['username'],
+                    user: queryResult.rows[0],
+                    question: result.rows
+                }
+
+                response.render('user/polls', content);
             }
         });
     };

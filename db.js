@@ -6,8 +6,8 @@
 
 const pg = require('pg');
 const user = require('./models/user');
-//  const answer = require('./models/answer');
-//  const question = require('./models/question');
+const ans = require('./models/ans');
+const question = require('./models/question');
 
 const configs = {
     user: 'postgres',
@@ -25,5 +25,7 @@ pool.on('error', function(err) {
 
 module.exports = {
     pool: pool,
-    user: user(pool)
+    user: user(pool),
+    question: question(pool),
+    ans: ans(pool)
 };

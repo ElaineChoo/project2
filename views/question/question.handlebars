@@ -1,0 +1,55 @@
+<div class="container-fluid">
+            <br>
+            <br>
+    <div class="row">
+        <div class="col-md-6">
+           <button class="btn btn-default" type="submit" href="#">Edit Poll</button>
+        </div>
+        <div class="col-md-6">
+            <button class="btn btn-default" type="submit" href="#">Activate Poll</button>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <h4>{{question.question}}</h4>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <h5>To participate in this poll, kindly go to :
+                <br>.../{{question.userid}}</h5>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+                <button class="btn-lg btn-default" id='opta' type="submit" value="A" formmethod="POST">A. {{question.opta}}</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+                <button class="btn-lg btn-default" id='optb' type="submit" value="B" formmethod="POST">B. {{question.optb}}</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+                <button class="btn-lg btn-default" id='optc' type="submit" value="C" formmethod="POST">C. {{question.optc}}</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+                <button class="btn-lg btn-default" id='optd' type="submit" value="D" formmethod="POST">D. {{question.optd}}</button>
+            </form>
+            <br><br>
+        </div>
+    </div>
+</div>

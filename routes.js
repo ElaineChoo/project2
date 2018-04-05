@@ -5,6 +5,8 @@
  */
 
 const users = require('./controllers/user');
+const questions = require('./controllers/question');
+const anss = require('./controllers/ans');
 
 module.exports = (app, allModels) => {
 
@@ -16,7 +18,7 @@ module.exports = (app, allModels) => {
     // CRUD users
 
     app.get('/register', users.newForm);
-    app.post('/:id/polls', users.create(allModels));
+    app.post('/users/:id/polls', users.create(allModels));
     app.get('/:id/polls', users.get(allModels));
     app.get('/users/:id/edit', users.updateForm(allModels));
     app.put('/users/:id', users.update(allModels));
@@ -25,4 +27,17 @@ module.exports = (app, allModels) => {
     app.post('/users/logout', users.logout);
     app.get('/login', users.loginForm);
     app.post('/users/login', users.login(allModels));
+
+    /**
+     * ============================================
+     * Questions
+     * ============================================
+     */
+    // CRUDE questions
+
+    app.get('/:userid/questions/new', questions.createForm(allModels));
+    app.post('/:userid/polls', questions.create(allModels));
+    app.get('/:userid/polls/:id/question', questions.get(allModels));
+
+    app.post('/:userid/polls/:id/question', anss.create(allModels));
 };
