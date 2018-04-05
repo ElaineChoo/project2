@@ -60,7 +60,11 @@ module.exports = (dbPool) => {
             const VALUES = [id];
 
             dbPool.query(queryString, VALUES, (error, queryResult) => {
-                callback(error, queryResult);
+                const qStr = 'SELECT * FROM questions WHERE userId = $1';
+                const val = [id];
+                dbPool.query(qStr, val, (err, result) => {
+                    callback(error, queryResult, err, result);
+                });
             });
         },
 

@@ -7,7 +7,7 @@
 const get = (allModels) => {
     return (request, response) => {
         //use user model method 'get' to retrive user data
-        allModels.user.get(request.params.id, (error, queryResult) => {
+        allModels.user.get(request.params.id, (error, queryResult, err, result) => {
             //queryResult contains user data returned from the user model
             if (error) {
                 console.log('error getting user: ', error);
@@ -17,7 +17,8 @@ const get = (allModels) => {
                 let content = {
                     loggedIn: request.cookies['loggedIn'],
                     username: request.cookies['username'],
-                    user: queryResult.rows[0]
+                    user: queryResult.rows[0],
+                    question: result.rows
                 }
                 console.log(content.user);
                 response.render('user/polls', content);
@@ -127,7 +128,8 @@ const login = (allModels) => {
 
                 response.cookie('loggedIn', true);
                 response.cookie('username', content.user.username);
-                response.render('user/polls');
+                response.redirect('/' + content.user.id + '/polls');
+
             } else {
                 response.render('user/login');
             }
