@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <h2>Edit User's Profile</h2>
+            <br>
+            <form class="user-form" method="POST" action="/users/{{user.id}}?_method=PUT">
+                <div class="form-group">
+                    <label for="img">Profile picture URL:</label>
+                    <input class="form-control" id="img" name="img" type="text" value="{{user.img}}" />
+                </div>
+
+                <div class="form-group">
+                    <label for="id">Id:</label>
+                    <input class="form-control" id="id" name="id" type="text" value="{{user.id}}" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input class="form-control" id="username" name="username" type="text" value="{{user.username}}" />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input class="form-control" id="email" name="email" type="email" value="{{user.email}}" />
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input class="form-control" id="password" name="password" type="password" value="{{user.password}}" readonly />
+                </div>
+
+                <input class="btn btn-default" name="Submit" type="submit" />
+            </form>
+            <br>
+        </div>
+    </div>
+</div>

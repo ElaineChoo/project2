@@ -1,0 +1,22 @@
+   <div class="container-fluid">
+       <div class="row">
+           <div class="p-0 col-md-12 hmCon">
+                <div class="bg">
+                </div>
+                <div class="hmContent">
+                    <h1>Live Interaction Audience Participation</h1>
+                    <h3>Engage your audience or class in real time.</h3>
+                    {{#if loggedIn}}
+                    <form>
+                    <input type="button" value="My Poll" onclick="window.location.href='/{{user.id}}/polls'" />
+                    </form>
+                    {{else}}
+                    <form>
+                        <input type="button" value="Sign Up" onclick="window.location.href='/register'" />
+                    </form>
+                    {{/if}}
+                </div>
+               
+           </div>
+       </div>
+   </div>

@@ -1,0 +1,84 @@
+table {
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: blue;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.hmLink,
+.hmLink:link,
+.hmLink:visited {
+    color: whitesmoke;
+    text-decoration: none;
+    /* z-index: 100; */
+}
+
+.hmLink:hover {
+    text-decoration: none;
+    color: palegoldenrod;
+    background-color: slateblue;
+    /* z-index: 100; */
+}
+
+.navBar {
+    height: 10vh;
+    width: 100%;
+}
+
+.logo {
+    margin: auto;
+    /* z-index: 100; */
+}
+
+.bg {
+    background-image: url("/img/liveInteract.jpeg");
+    height: 85vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.2;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -100;
+}
+
+.hmCon {
+    text-align: center;
+}
+
+.hmContent {
+    text-align: center;
+    margin: 35vh auto;
+}
+
+.err404 {
+    text-align: center;
+}
+
+.err {
+    height: 85vh;
+}
+
+.footer {
+    height: 10vh;
+    width: 100%;
+}

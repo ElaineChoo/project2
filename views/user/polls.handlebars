@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class='row'>
+        <div class='col-md-12'>
+            <br><br>
+            <button type="button" onclick="/polls/new">Create</button>
+            <br><br>
+        </div>
+    </div>
+    <div class='row'>
+        <table>
+            <thead width="100%">
+                <tr>
+                    <th width="70%">Questions</th>
+                    <th>Response</th>
+                </tr>
+            </thead>
+            <tbody width="100%">
+                <tr>
+                    {{#each user}}
+                    <td>{{this.question}}</td>
+                    {{/each}}
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+    </div>
+</div>
