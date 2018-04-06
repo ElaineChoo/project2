@@ -36,7 +36,8 @@ module.exports = (dbPool) => {
             ];
             // execute query
             dbPool.query(queryString, VALUES, (error, queryResult) => {
-                console.log('question model queryResult: ' + queryResult.rows);
+                console.log('question model create queryResult: ');
+                console.log(queryResult.rows);
                 callback(error, queryResult);
             });
         },

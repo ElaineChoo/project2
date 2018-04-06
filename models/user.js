@@ -45,13 +45,16 @@ module.exports = (dbPool) => {
 
             dbPool.query(queryString, VALUES, (error, queryResult) => {
                 bcrypt.compare(user.password, queryResult.rows[0].password, (err, res) => {
+                    console.log(res);
                     if (res) {
                         callback(error, queryResult);
                     } else {
-                        callback(error, queryResult);
+                        callback(error, false);
                     }
                 });
             });
+
+
         },
 
         get: (id, callback) => {

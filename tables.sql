@@ -24,5 +24,5 @@ CREATE TABLE IF NOT EXISTS answers (
     id SERIAL PRIMARY KEY,
     question_id varchar (255),
     ans varchar (1)
-)
+);
 

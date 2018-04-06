@@ -7,6 +7,7 @@
 const users = require('./controllers/user');
 const questions = require('./controllers/question');
 const anss = require('./controllers/ans');
+// const delegates = require('./controllers/delegate');
 
 module.exports = (app, allModels) => {
 
@@ -40,4 +41,7 @@ module.exports = (app, allModels) => {
     app.get('/:userid/polls/:id/question', questions.get(allModels));
 
     app.post('/:userid/polls/:id/question', anss.create(allModels));
+
+
+    // app.post('/:id', delegates.create(allModels));
 };

@@ -28,4 +28,5 @@ module.exports = {
     user: user(pool),
     question: question(pool),
     ans: ans(pool)
+        // delegate: delegate(pool)
 };

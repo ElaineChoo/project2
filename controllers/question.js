@@ -75,7 +75,7 @@ const create = (allModels) => {
                 username: request.cookies['username'],
                 question: queryResult.rows[0]
             };
-            response.redirect('/' + request.params.userid + '/polls', content);
+            response.redirect('/' + request.params.userid + '/polls');
         });
     };
 };
