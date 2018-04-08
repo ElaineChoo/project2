@@ -44,7 +44,7 @@ const createForm = (allModels) => {
                     username: request.cookies['username'],
                     user: queryResult.rows[0]
                 };
-                console.log(content.user);
+
                 response.render('question/new', content);
 
             }
@@ -87,6 +87,8 @@ const activate = (allModels) => {
                 response.sendStatus(500);
             }
             let content = {
+                loggedIn: request.cookies['loggedIn'],
+                username: request.cookies['username'],
                 question: queryResult.rows[0]
             }
             response.render('ans/result', content);

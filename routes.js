@@ -42,7 +42,7 @@ module.exports = (app, allModels) => {
     app.post('/:userid/polls/:id/question', questions.activate(allModels));
 
 
-    // app.post('/:userid/polls/:id/question', anss.create(allModels));
+    app.get('/:userid/polls/:id/result', anss.getBar(allModels));
 
 
     app.get('/:id', delegates.getQns(allModels));

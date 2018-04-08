@@ -1,13 +1,42 @@
 <div class="container-fluid">
     <div class="row">
+        <div class="col-md-6">
+            <h2>{{question.question}}</h2>
+        </div>
+        <div class="col-md-6">
+            <form>
+                <button class="btn btn-default" type="submit" id="activate" formmethod="GET" onmouseover="window.location.href='/{{question.userid}}/polls/{{question.id}}/result'">Refresh</button>
+            </form>
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
         <div class="col-md-12">
-            <h3>{{question.question}}</h3>
+            <div class="optA" style="background-color: coral; width:{{ResA}}%;">
+                <h3>Option A : {{question.opta}}<br>({{ResA}}%)</h3>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-             //bar graph
+            <div class="optB" style="background-color:honeydew; width:{{ResB}}%;">
+                <h3>Option B: {{question.optb}}<br>({{ResB}}%)</h3>
+            </div>
         </div>
     </div>
-
+    <div class="row">
+        <div class="col-md-12">
+            <div class="optC" style="background-color: lavender; width:{{ResC}}%;">
+                <h3>Option C: {{question.optc}}<br>({{ResC}}%)</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="optD" style="background-color:hotpink; width:{{ResD}}%;">
+            <h3>Option D: {{question.optd}}<br>({{ResD}}%)</h3>
+            </div>
+        </div>
+    </div>
 </div>
+

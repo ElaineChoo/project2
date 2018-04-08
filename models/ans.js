@@ -1,28 +1,42 @@
 module.exports = (dbPool) => {
     return {
 
-        // create: (ans, id, callback) => {
-        //     let queryString = 'INSERT INTO answers (question_id, ans) VALUES ($1, $2) RETURNING *';
-        //     let VALUES = [id, ans.ans];
+        getBar: (id, callback) => {
+            let queryString = 'SELECT * FROM questions WHERE id=$1';
+            let VALUES = [id];
+            dbPool.query(queryString, VALUES, (error1, queryResult) => {
 
+                let qStr = 'SELECT COUNT(*) FROM answers WHERE question_id=$1';
+                let val = [id];
+                dbPool.query(qStr, val, (error, result) => {
 
-        //     dbPool.query(queryString, VALUES, (error, queryResult) => {
+                    let queryStrA = 'SELECT COUNT (ans) FROM answers WHERE question_id=$1 AND ans=$2';
+                    let valA = [id, 'A'];
+                    dbPool.query(queryStrA, valA, (errA, queryResA) => {
 
-        //         callback(error, queryResult);
-        //     });
-        // }
+                        let queryStrB = 'SELECT COUNT (ans) FROM answers WHERE question_id=$1 AND ans=$2';
+                        let valB = [id, 'B'];
+                        dbPool.query(queryStrB, valB, (errB, queryResB) => {
+
+                            let queryStrC = 'SELECT COUNT (ans) FROM answers WHERE question_id=$1 AND ans=$2';
+                            let valC = [id, 'C'];
+                            dbPool.query(queryStrC, valC, (errC, queryResC) => {
+
+                                let queryStrD = 'SELECT COUNT (ans) FROM answers WHERE question_id=$1 AND ans=$2';
+                                let valD = [id, 'D'];
+                                dbPool.query(queryStrD, valD, (errD, queryResD) => {
+
+                                    callback(error, queryResult, result, queryResA, queryResB, queryResC, queryResD);
+                                });
+
+                            });
+
+                        });
+
+                    });
+                });
+            });
+        }
 
     };
 };
-
-
-/**
- * 
- * select COUNT(*) FROM ANSWERS WHERE question_id='id';
- * //output = total response for that question
- * 
- * SELECT COUNT(ans) FROM answers WHERE question_id='id' AND ans='D';
- * //output = total response that replied D for that question
- * 
- * 
- */

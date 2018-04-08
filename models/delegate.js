@@ -6,7 +6,7 @@ module.exports = (dbPool) => {
             const VALUES = [id, 'Y'];
 
             dbPool.query(queryString, VALUES, (error, queryResult) => {
-                console.log(queryResult.rows[0]);
+
                 callback(error, queryResult);
             })
         },
