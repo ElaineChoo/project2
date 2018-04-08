@@ -54,6 +54,21 @@ module.exports = (dbPool) => {
                     callback(error, queryResult, err, result);
                 })
             });
+        },
+
+        activate: (id, userid, callback) => {
+            const qStr = 'UPDATE questions SET is_active=$1 WHERE userid = $2';
+            const val = ['N', userid];
+
+            dbPool.query(qStr, val, (err, result) => {
+                const queryString = 'UPDATE questions SET is_active=$1 WHERE id = $2 RETURNING *';
+                const VALUES = ['Y', id];
+
+                dbPool.query(queryString, VALUES, (error, queryResult) => {
+
+                    callback(error, queryResult);
+                });
+            });
         }
 
     };

@@ -27,7 +27,8 @@
         "handlebars-layout": "^0.1.4",
         "method-override": "^2.3.10",
         "npm": "^5.8.0",
-        "pg": "^7.4.1"
+        "pg": "^7.4.1",
+        "request": "^2.85.0"
     },
     "devDependencies": {
         "css-loader": "^0.28.11",

@@ -80,6 +80,20 @@ const create = (allModels) => {
     };
 };
 
+const activate = (allModels) => {
+    return (request, response) => {
+        allModels.question.activate(request.params.id, request.params.userid, (error, queryResult) => {
+            if (error) {
+                response.sendStatus(500);
+            }
+            let content = {
+                question: queryResult.rows[0]
+            }
+            response.render('ans/result', content);
+        })
+    }
+}
+
 /**
  * ================================================
  * Export Controller Functions as a module
@@ -88,5 +102,6 @@ const create = (allModels) => {
 module.exports = {
     get,
     createForm,
-    create
+    create,
+    activate
 };

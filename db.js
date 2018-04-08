@@ -11,8 +11,9 @@ const pg = require('pg');
 const user = require('./models/user');
 const ans = require('./models/ans');
 const question = require('./models/question');
+const delegate = require('./models/delegate');
 
-/check to see if we have this heroku environment variable
+//check to see if we have this heroku environment variable
 if (process.env.DATABASE_URL) {
 
     //we need to take apart the url so we can set the appropriate configs
@@ -52,6 +53,6 @@ module.exports = {
     pool: pool,
     user: user(pool),
     question: question(pool),
-    ans: ans(pool)
-        // delegate: delegate(pool)
+    ans: ans(pool),
+    delegate: delegate(pool)
 };
