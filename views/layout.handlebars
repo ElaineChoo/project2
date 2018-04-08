@@ -24,26 +24,26 @@
             
             {{#if loggedIn}}
             <div class="col-md-1">
-                <h5><a class="hmLink" href="/{{user.id}}/polls">My Polls</a></h5>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='/{{user.id}}/polls'">My Polls</button>
             </div>
             <div class="col-md-1">
 
                 <form action='/users/logout' method="POST">
-                    <input class="btn btn-default" class="hmLink" type="submit" value="Logout">
+                    <input class="btn btn-primary" type="submit" value="Logout">
                 </form>
             </div>
             <div class="col-md-1">
-                <h5></h5><a href='/users/{{user.id}}/edit' class="hmLink">{{username}}</a></h5>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='/users/{{user.id}}/edit'">{{username}}</button>
             </div>
             {{else}}
             <div class="col-md-1">
                 <button type="button" class="btn btn-primary" id="How_it_WorksBtn" data-toggle="modal" data-target="#How_It_Works"><h5>How It Works</h5></button>
             </div>
             <div class="col-md-1">
-                <h5><a href="/login" class="hmLink">Login</a></h5>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='/login'" id="login"><h5>Login</h5></button>
             </div>
             <div class="col-md-1">
-                <h5><a href="/register" class="hmLink">Sign Up</a></h5>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='/register'" id="signUp" ><h5>Sign Up</h5></button>
             </div>
             {{/if}}
         </div>
