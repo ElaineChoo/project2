@@ -7,7 +7,7 @@
 const updateForm = (allModels) => {
 
     return (request, response) => {
-        console.log('controllers updateform id: ' + request.params.id);
+
         allModels.user.updateForm(request.params.id, (error, queryResult) => {
             if (error) {
                 console.log('error getting user: ', error);
@@ -80,7 +80,7 @@ const create = (allModels) => {
                 username: request.cookies['username'],
                 user: queryResult.rows[0]
             };
-            response.render('user/polls');
+            response.redirect('/' + content.user.id + '/polls');
         });
     };
 };

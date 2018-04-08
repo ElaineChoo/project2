@@ -1,6 +1,6 @@
 const getBar = (allModels) => {
     return (request, response) => {
-        allModels.ans.getBar(request.params.id, (error, queryResult, result, queryResA, queryResB, queryResC, queryResD) => {
+        allModels.ans.getBar(request.params.id, (error, queryResult, queryRes, result, queryResA, queryResB, queryResC, queryResD) => {
             if (error) {
                 response.sendStatus(500);
             }
@@ -14,6 +14,7 @@ const getBar = (allModels) => {
             let content = {
                 loggedIn: request.cookies['loggedIn'],
                 username: request.cookies['username'],
+                user: queryRes.rows[0],
                 question: queryResult.rows[0],
                 ResA: resA,
                 ResB: resB,
