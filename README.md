@@ -2,8 +2,19 @@
 Project 2: Live Poll
 <br>https://radiant-chamber-68196.herokuapp.com/
 
-#Wireframe and ERD
-![Wireframe and ERD](/pre-project/Wireframe & ERD_Live Poll.pdf)
+#Wireframe
+<br>![Wireframe](/public/img/wireframe_1.jpg)
+<br>![Wireframe](/public/img/wireframe_2.jpg)
+<br>![Wireframe](/public/img/wireframe_3.jpg)
+<br>![Wireframe](/public/img/wireframe_4.jpg)
+<br>![Wireframe](/public/img/wireframe_5.jpg)
+<br>![Wireframe](/public/img/wireframe_6.jpg)
+<br>![Wireframe](/public/img/wireframe_7.jpg)
+<br>![Wireframe](/public/img/wireframe_8.jpg)
+
+#ERD
+<br>![Wireframe](/public/img/erd.jpg)
+
 
 #Overview
-![Overview](/public/img/overview.PNG)
+<br>![Overview](/public/img/overview.PNG)
