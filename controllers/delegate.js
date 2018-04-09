@@ -28,7 +28,7 @@ const createAns = (allModels) => {
 
             //redirect to My Poll after creation
 
-            response.render('/delegate/submit');
+            response.render('delegate/submit');
         });
     };
 };
