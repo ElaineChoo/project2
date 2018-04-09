@@ -2,7 +2,7 @@
 Project 2: Live Poll
 <br>https://radiant-chamber-68196.herokuapp.com/
 
-##Wireframe
+# Wireframe
 <br>![Wireframe](/public/img/wireframe_1.jpg)
 <br>![Wireframe](/public/img/wireframe_2.jpg)
 <br>![Wireframe](/public/img/wireframe_3.jpg)
@@ -16,5 +16,5 @@ Project 2: Live Poll
 <br>![Wireframe](/public/img/erd.jpg)
 
 
-##Overview
+# Overview
 <br>![Overview](/public/img/overview.PNG)
