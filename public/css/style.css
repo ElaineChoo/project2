@@ -23,21 +23,6 @@ td {
     padding: 8px;
 }
 
-.hmLink,
-.hmLink:link,
-.hmLink:visited {
-    color: whitesmoke;
-    text-decoration: none;
-    /* z-index: 100; */
-}
-
-.hmLink:hover {
-    text-decoration: none;
-    color: palegoldenrod;
-    background-color: slateblue;
-    /* z-index: 100; */
-}
-
 .navBar {
     height: 10vh;
     width: 100%;
@@ -76,6 +61,10 @@ td {
 
 .err {
     height: 85vh;
+}
+
+.submit {
+    text-align: center;
 }
 
 .footer {
